@@ -8,7 +8,8 @@ Alongside Pablo Navarro Castillo (author of the book Mastering D3.js), you’ll 
 
 #### Workshop Overview
 
-- Getting and transforming geographical data - Understanding GeoJSON and TopoJSON formats
+- Getting and transforming geographical data
+- Understanding GeoJSON and TopoJSON formats
 - Using map projections
 - Creating a simple map
 - Interactions: Rotating and zooming
