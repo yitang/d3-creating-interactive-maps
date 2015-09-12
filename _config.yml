@@ -7,7 +7,7 @@ email:       pnavarrc@gmail.com
 
 # Paths
 destination: ./dist
-baseurl:     /d3-creating-interactive-maps/dist
+baseurl:     /d3-creating-interactive-maps
 
 exclude:
   - bower_components
