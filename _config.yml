@@ -9,6 +9,11 @@ email:       pnavarrc@gmail.com
 destination: ./dist
 baseurl:     /d3-creating-interactive-maps/dist
 
+exclude:
+  - bower_components
+  - bower.json
+  - dist
+
 # Build Settings
 safe:        true
 markdown:    kramdown
