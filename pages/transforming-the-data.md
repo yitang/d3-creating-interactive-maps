@@ -24,6 +24,10 @@ $ npm install --global topojson
 
 We will use geographic data from [Natural Earth][natural-earth]
 
+Use a Makefile, is more efficient
+
+
+
 
 <!-- Reference Links -->
 
