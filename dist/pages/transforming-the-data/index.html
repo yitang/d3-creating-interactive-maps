@@ -11,10 +11,16 @@
     <meta name="description" content="">
 
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
     <link rel="canonical" href="/pages/transforming-the-data/">
   </head>
 
   <body>
+
+    <div class='header'>
+  <a href='/'>Home</a>
+</div>
+
 
     <div class="content">
       <h1 id="getting-and-transforming-the-data">Getting and Transforming the Data</h1>
@@ -23,17 +29,15 @@
 
 <p>The first step is to install <a href="http://www.gdal.org/" title="Geospatial Data Abstraction Library">GDAL</a></p>
 
-<p><code>
-# Adapt to your operating system if needed
+<pre><code># Adapt to your operating system if needed
 $ brew install gdal
-</code></p>
+</code></pre>
 
 <p>we will also use [TopoJSON][topojson] (both the library and the command line tool)</p>
 
-<p><code>
-# Install the `topojson` command line tool
+<pre><code># Install the `topojson` command line tool
 $ npm install --global topojson
-</code></p>
+</code></pre>
 
 <h2 id="getting-geographic-data">Getting Geographic Data</h2>
 

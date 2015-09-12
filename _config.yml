@@ -18,3 +18,8 @@ exclude:
 safe:        true
 markdown:    kramdown
 permalink:   pretty
+
+kramdown:
+  input: GFM
+
+highlighter: pygments
