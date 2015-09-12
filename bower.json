@@ -1,0 +1,29 @@
+{
+  "name": "d3-creating-interactive-maps",
+  "version": "0.1.2",
+  "homepage": "https://github.com/pnavarrc/d3-creating-interactive-maps",
+  "authors": [
+    "Pablo Navarro Castillo <pnavarrc@gmail.com>"
+  ],
+  "description": "Workshop for The Graphical Web 2015 - Creating Interactive Maps with D3",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "d3",
+    "maps",
+    "workshop",
+    "graphical-web"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.6"
+  }
+}
