@@ -10,14 +10,262 @@
     </title>
     <meta name="description" content="">
 
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
     <link rel="canonical" href="/pages/creating-a-simple-map/">
   </head>
 
   <body>
 
+    <div class='header'>
+  <a href='/'>Home</a>
+</div>
+
+
     <div class="content">
-      
+      <h1 id="creating-a-simple-map">Creating a Simple Map</h1>
+
+<p>The basic skill to create map-based visualizations is being able to draw a simple map. In order to do this, we don’t need to know much, but at least:</p>
+
+<ul>
+  <li>Some SVG</li>
+  <li>Projections</li>
+  <li>Path Generators</li>
+  <li>Basic D3</li>
+  <li>CSS</li>
+</ul>
+
+<style>
+#world-map svg {
+  background-color: #4A4456;
+}
+.countries {
+  fill: #3B9FB6;
+}
+</style>
+
+<div id="world-map" class="figure"></div>
+
+<script src="/assets/js/libs/d3.js"></script>
+
+<script>
+(function() {
+  // Create a selection for the map container
+  var div = d3.select('#world-map');
+
+  // Configure the map size and projection
+  var width = 800,
+      height = 400;
+
+  // Create and configure the projection
+  var projection = d3.geo.equirectangular()
+    .translate([width / 2, height / 2]);
+
+  // Configure the path generator
+  var pathGenerator = d3.geo.path()
+    .projection(projection);
+
+  // Construct the GeoJSON URL
+  var geoJsonUrl = '/assets/data/cultural-1-50m/countries.json';
+
+  // Load and parse the GeoJSON file asynchronously
+  d3.json(geoJsonUrl, function(error, data) {
+
+    // Handle errors getting or parsing the GeoJSON file
+    if (error) {
+      console.error(error);
+      throw error;
+    }
+
+    var svg = div.selectAll('svg.map').data([data]);
+
+    svg.enter().append('svg')
+      .classed('map', true);
+
+    svg
+      .attr('width', width)
+      .attr('height', height);
+
+    svg.exit().remove();
+
+    var countries = svg.selectAll('path.countries').data([data]);
+
+    countries.enter().append('path')
+      .classed('countries', true);
+
+    countries
+      .attr('d', pathGenerator);
+
+    countries.exit().remove();
+  });  
+})();
+</script>
+
+<h2 id="step-by-step">Step by Step</h2>
+
+<ul>
+  <li>First, we define the size of our map</li>
+  <li>We create a <em>projection</em></li>
+  <li>We create and configure the <em>path generator</em></li>
+  <li>We load the GeoJSON data</li>
+  <li>We create a selection for the <code>path</code> elements and bind them to the GeoJSON data</li>
+  <li>We use the path generator to compute the SVG path string</li>
+</ul>
+
+<p>Some things worth noting:</p>
+
+<p>The map above will only generate one big path, corresponding to the countries <code>FeatureCollection</code>. We can’t give individual countries different colors, because they are all drawn in one <code>path</code> element.</p>
+
+<h2 id="creating-multiple-paths">Creating Multiple Paths</h2>
+
+<style>
+#countries-map svg {
+  background-color: #4A4456;
+}
+#countries-map .country {
+  fill: #3B9FB6;
+  stroke-width: 1px;
+  stroke: #4A4456;
+}
+</style>
+
+<div id="countries-map" class="figure"></div>
+
+<script>
+(function() {
+  // Create a selection for the map container
+  var div = d3.select('#countries-map');
+
+  // Configure the map size and projection
+  var width = 800,
+      height = 400;
+
+  // Create and configure the projection
+  var projection = d3.geo.equirectangular()
+    .translate([width / 2, height / 2]);
+
+  // Configure the path generator
+  var pathGenerator = d3.geo.path()
+    .projection(projection);
+
+  // Construct the GeoJSON URL
+  var geoJsonUrl = '/assets/data/cultural-1-50m/countries.json';
+
+  // Load and parse the GeoJSON file asynchronously
+  d3.json(geoJsonUrl, function(error, data) {
+
+    // Handle errors getting or parsing the GeoJSON file
+    if (error) {
+      console.error(error);
+      throw error;
+    }
+
+    var svg = div.selectAll('svg.map').data([data]);
+
+    svg.enter().append('svg')
+      .classed('map', true);
+
+    svg
+      .attr('width', width)
+      .attr('height', height);
+
+    svg.exit().remove();
+
+    var countries = svg.selectAll('path.country').data(data.features);
+
+    countries.enter().append('path')
+      .classed('country', true);
+
+    countries
+      .attr('d', pathGenerator);
+
+    countries.exit().remove();
+  });
+})();
+</script>
+
+<p>A <code>FeatureCollection</code> has an attribute <code>features</code>, which contains one or more <code>Features</code> or <code>FeatureCollection</code> objects. In this case, the <code>features</code> array contains one item per country.</p>
+
+<p>Ok, but who cares?</p>
+
+<p>We, because if we have different <code>path</code> elements, we can manipulate them individually, adding custom styles, borders and the like.</p>
+
+<h2 id="custom-styles">Custom Styles</h2>
+
+<style>
+#countries-map-styles svg {
+  background-color: #4A4456;
+}
+#countries-map-styles .country {
+  fill: #3B9FB6;
+  stroke-width: 1px;
+  stroke: #4A4456;
+}
+
+#countries-map-styles .africa {
+  fill: #EDC951;
+}
+</style>
+
+<div id="countries-map-styles" class="figure"></div>
+
+<script>
+(function() {
+  // Create a selection for the map container
+  var div = d3.select('#countries-map-styles');
+
+  // Configure the map size and projection
+  var width = 800,
+      height = 400;
+
+  // Create and configure the projection
+  var projection = d3.geo.equirectangular()
+    .translate([width / 2, height / 2]);
+
+  // Configure the path generator
+  var pathGenerator = d3.geo.path()
+    .projection(projection);
+
+  // Construct the GeoJSON URL
+  var geoJsonUrl = '/assets/data/cultural-1-50m/countries.json';
+
+  // Load and parse the GeoJSON file asynchronously
+  d3.json(geoJsonUrl, function(error, data) {
+
+    // Handle errors getting or parsing the GeoJSON file
+    if (error) {
+      console.error(error);
+      throw error;
+    }
+
+    var svg = div.selectAll('svg.map').data([data]);
+
+    svg.enter().append('svg')
+      .classed('map', true);
+
+    svg
+      .attr('width', width)
+      .attr('height', height);
+
+    svg.exit().remove();
+
+    var countries = svg.selectAll('path.country').data(data.features);
+
+    countries.enter().append('path')
+      .classed('country', true)
+      .each(function(d) {
+        var continent = d.properties.continent.toLowerCase();
+        d3.select(this).classed(continent, true);
+      });
+
+    countries
+      .attr('d', pathGenerator);
+
+    countries.exit().remove();
+  });
+})();
+</script>
+
 
     </div>
 

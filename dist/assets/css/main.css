@@ -1,0 +1,22 @@
+body {
+  max-width: 980px;
+  margin: auto;
+
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #eee;
+}
+
+.header {
+  padding: 20px 0;
+}
+
+.figure {
+  border: solid 1px #ddd;
+  padding: 10px;
+  margin: 25px auto;
+}
+
+.figure > svg {
+  display: block;
+  margin: auto;
+}
