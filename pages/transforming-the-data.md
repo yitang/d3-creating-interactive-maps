@@ -25,6 +25,9 @@ $ npm install --global topojson
 We will use geographic data from [Natural Earth][natural-earth]
 
 
+
+
+
 <!-- Reference Links -->
 
 [gdal]: http://www.gdal.org/ "Geospatial Data Abstraction Library"
