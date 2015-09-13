@@ -1,0 +1,28 @@
+{
+  "name": "d3-creating-interactive-maps",
+  "version": "0.1.4",
+  "description": "Creating Interactive Maps with D3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnavarrc/d3-creating-interactive-maps.git"
+  },
+  "keywords": [
+    "d3",
+    "maps",
+    "graphicalweb"
+  ],
+  "author": "Pablo Navarro Castillo <pnavarrc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pnavarrc/d3-creating-interactive-maps/issues"
+  },
+  "homepage": "https://github.com/pnavarrc/d3-creating-interactive-maps",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-stylus": "^2.0.6"
+  }
+}
