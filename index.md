@@ -20,7 +20,9 @@ layout: home
 
   <!-- Practice -->
   <div class="section">
-    <h2>practice</h2>
+    <h2>demos</h2>
+
+    <a href="{{site.baseurl}}/apps/location-api">Location API</a>
   </div>
 
   <!-- Fork -->

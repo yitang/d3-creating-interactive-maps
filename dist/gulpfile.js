@@ -12,6 +12,10 @@ gulp.task('stylus', ['clean:css'], function() {
     .pipe(stylus())
     .pipe(gulp.dest('assets/css'));
 
+  gulp.src('src/stylus/apps/location-api.styl')
+    .pipe(stylus())
+    .pipe(gulp.dest('apps/location-api'));
+
 });
 
 gulp.task('clean:css', function() {
