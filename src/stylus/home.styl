@@ -1,13 +1,15 @@
 // Home Page
+// ---------
 
 // Hero Unit
+// ---------
 .hero
 
   height 300px
   padding-top 120px
   border-bottom solid 1px lighten(color_teal_dark, 10%)
 
-  background linear-gradient(top, darken(color_teal_dark, 10%), color_teal_light)
+  background linear-gradient(top, darken(color_teal_dark, 15%), color_teal_light)
 
   color color_white
   text-align center
@@ -18,13 +20,22 @@
 .leading
   font-size 24px
 
-// Table of Contents
-.table-of-contents
+// Main Sections
+// -------------
+.main-sections
+
   max-width 980px
+  height 200px
 
-  margin-top 80px
-  margin auto
+  margin 30px auto
 
-  h1
+  display flex
+  flex-direction row
+
+  .section
+    flex 1 1 auto
+
+  .section h2
+    font-size 2em
     text-align center
     font-variant small-caps

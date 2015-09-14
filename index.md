@@ -10,11 +10,21 @@ layout: home
 </div>
 
 
-<!-- Table of Contents -->
-<div class="table-of-contents">
-  <h1>contents</h1>
-</div>
+<!-- Contents -->
+<div class="main-sections">
 
-- [Transforming the Data]({{site.baseurl}}/pages/transforming-the-data)
-- [Creating a Simple Map]({{site.baseurl}}/pages/creating-a-simple-map)
-- [Geographic Projections]({{site.baseurl}}/pages/geographic-projections)
+  <!-- Learn -->
+  <div class="section">
+    <h2>learn</h2>
+  </div>
+
+  <!-- Practice -->
+  <div class="section">
+    <h2>practice</h2>
+  </div>
+
+  <!-- Fork -->
+  <div class="section">
+    <h2>download</h2>
+  </div>
+</div>
