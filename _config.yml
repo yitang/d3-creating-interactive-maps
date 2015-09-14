@@ -13,6 +13,7 @@ exclude:
   - bower_components
   - bower.json
   - dist
+  - src
 
 # Build Settings
 safe:        true

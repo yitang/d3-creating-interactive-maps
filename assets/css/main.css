@@ -1,22 +1,32 @@
-body {
+.hero {
+  height: 300px;
+  padding-top: 120px;
+  background: -webkit-linear-gradient(top, #1693a5, #00cdac);
+  background: -moz-linear-gradient(top, #1693a5, #00cdac);
+  background: -o-linear-gradient(top, #1693a5, #00cdac);
+  background: -ms-linear-gradient(top, #1693a5, #00cdac);
+  background: linear-gradient(to bottom, #1693a5, #00cdac);
+  color: #fff;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 48px;
+}
+.leading {
+  font-size: 24px;
+}
+.table-of-contents {
   max-width: 980px;
+  margin-top: 80px;
   margin: auto;
-
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  background-color: #eee;
 }
-
-.header {
-  padding: 20px 0;
+.table-of-contents h1 {
+  text-align: center;
+  font-variant: small-caps;
 }
-
-.figure {
-  border: solid 1px #ddd;
-  padding: 10px;
-  margin: 25px auto;
-}
-
-.figure > svg {
-  display: block;
-  margin: auto;
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  background-color: #e9e0d1;
+  color: #3c301d;
 }
